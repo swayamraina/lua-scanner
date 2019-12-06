@@ -13,13 +13,13 @@ type Cache map[string]string
 
 //
 //
-func (cache Cache) get (key string) string {
+func (cache Cache) Get (key string) string {
 	return cache[key]
 }
 
 
 //
 //
-func (cache Cache) set (key string, value string) {
+func (cache Cache) Set (key string, value string) {
 	cache[key] = value
 }
