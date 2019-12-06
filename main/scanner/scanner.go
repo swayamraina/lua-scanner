@@ -4,11 +4,8 @@ package scanner
 // @author 	swayam.raina
 // @dated 	05.12.2019
 
-import (
-	"lua-scanner/main/config"
-	"lua-scanner/main/scanner/internal"
-	"lua-scanner/main/scanner/external"
-)
+
+
 
 
 // This structure defines the main scanner
@@ -23,11 +20,11 @@ type Scanner struct {
 func (scanner *Scanner) Scan () []string {
 	var files []string
 	config := scanner.config
-	if config.internalScan {
-		files = append(files, internal.Scan())
-	}
-	if config.externalScan {
-		files = append(files, external.Scan())
-	}
+	//if config.InternalScan {
+	//	files = append(files, internal.Scan())
+	//}
+	//if config.ExternalScan {
+	//	files = append(files, external.Scan())
+	//}
 	return files
 }

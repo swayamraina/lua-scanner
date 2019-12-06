@@ -12,19 +12,19 @@ type Config struct {
 
 	// this property acts as a switch for external
 	// lua script discovery scan
-	externalScan bool
+	ExternalScan bool
 
 	// this property decides the refresh rate for
 	// the external scan of lua scripts
-	refreshRate int
+	RefreshRate int
 
 	// this property is used by the scanner to
 	// look for all the lua scripts in the file
 	// system for discovery
-	externalPath string
+	ExternalPath string
 
 	// this property acts as a switch for internal
 	// lua script discovery scan
-	internalScan bool
+	InternalScan bool
 
 }
