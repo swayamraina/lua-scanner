@@ -5,11 +5,11 @@
 
 package scanner
 
-
 import (
 	"lua-scanner/main/cache"
 	"lua-scanner/main/config"
 	"lua-scanner/main/scanner/internal"
+	"lua-scanner/main/utils"
 )
 
 
@@ -18,7 +18,7 @@ import (
 // lifting of file-system scanning
 //
 type Scanner struct {
-	config config.Config
+	Config config.Config
 }
 
 
@@ -27,9 +27,9 @@ type Scanner struct {
 //
 func (scanner *Scanner) Scan () []string {
 	var scripts []string
-	config := scanner.config
+	config := scanner.Config
 	if config.InternalScan {
-		scripts = internal.Scan(scanner.config.InternalPaths)
+		scripts = internal.Scan(scanner.Config.InternalPaths)
 	}
 	return scripts
 }
@@ -39,6 +39,10 @@ func (scanner *Scanner) Scan () []string {
 //
 func (scanner *Scanner) LoadInCache (scriptPaths []string) cache.Cache {
 	var cache = make(cache.Cache)
-
+	for _, scriptPath := range scriptPaths {
+		filename := utils.GetFileName(scriptPath)
+		content := utils.GetContents(scriptPath)
+		cache.Set(filename, content)
+	}
 	return cache
 }

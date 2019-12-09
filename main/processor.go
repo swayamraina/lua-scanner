@@ -17,7 +17,7 @@ import (
 //
 func process (config config.Config) cache.Cache {
 	scanner := scanner.Scanner {
-		 config,
+		 Config: config,
 	}
 	scripts := scanner.Scan()
 	return scanner.LoadInCache(scripts)
