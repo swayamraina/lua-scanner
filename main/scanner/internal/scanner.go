@@ -7,7 +7,7 @@ package internal
 
 
 import (
-	"lua-scanner/main/scanner/utils"
+	"github.com/swayamraina/lua-scanner/main/scanner/utils"
 	"os"
 	"path/filepath"
 )

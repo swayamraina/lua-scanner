@@ -6,10 +6,10 @@
 package scanner
 
 import (
-	"lua-scanner/main/cache"
-	"lua-scanner/main/config"
-	"lua-scanner/main/scanner/internal"
-	"lua-scanner/main/utils"
+	"github.com/swayamraina/lua-scanner/main/cache"
+	"github.com/swayamraina/lua-scanner/main/config"
+	"github.com/swayamraina/lua-scanner/main/scanner/internal"
+	"github.com/swayamraina/lua-scanner/main/utils"
 )
 
 

@@ -7,9 +7,9 @@ package main
 
 
 import (
-	"lua-scanner/main/cache"
-	"lua-scanner/main/config"
-	"lua-scanner/main/scanner"
+	"github.com/swayamraina/lua-scanner/main/cache"
+	"github.com/swayamraina/lua-scanner/main/config"
+	"github.com/swayamraina/lua-scanner/main/scanner"
 )
 
 
