@@ -10,6 +10,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
 )
 
 
@@ -38,5 +39,7 @@ func GetContents (scriptPath string) string {
 //
 //
 func GetFileName (scriptPath string) string {
-	return "hello"
+	start := strings.LastIndex(scriptPath, "/")
+	end := strings.LastIndex(scriptPath, ".")
+	return scriptPath [start+1 : end]
 }
