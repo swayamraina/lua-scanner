@@ -3,7 +3,7 @@
 // @dated 	06.12.2019
 
 
-package main
+package processor
 
 
 import (
@@ -15,7 +15,7 @@ import (
 
 //
 //
-func process (config config.Config) cache.Cache {
+func Process (config config.Config) cache.Cache {
 	scanner := scanner.Scanner {
 		 Config: config,
 	}
