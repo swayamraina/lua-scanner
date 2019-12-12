@@ -1,6 +1,7 @@
 /*
 
-	This file contains all the scanner level constants
+	This file contains all the project level utility
+	methods.
 
 	@author 	swayam.raina
 	@dated 		06.12.2019
