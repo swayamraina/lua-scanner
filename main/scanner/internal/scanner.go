@@ -1,6 +1,13 @@
+/*
 
-// @author 	swayam.raina
-// @dated 	05.12.2019
+	This file contains internal scanning logic i.e.
+	the internal scanner will scan lua scripts which are
+	embedded inside the code repository.
+
+	@author 	swayam.raina
+	@dated 		05.12.2019
+
+ */
 
 
 package internal
@@ -13,10 +20,14 @@ import (
 )
 
 
-// This function uses function currying.
-// When ever we see a ".lua" file, we add
-// it into the discovery result
-//
+
+/*
+	This function uses function currying to scan over the
+	input directories and search for '.lua' files and into
+	the discovery set.
+
+	files:		the final result set containing script paths
+ */
 func visit(files *[]string) filepath.WalkFunc {
 	return func (path string, info os.FileInfo, err error) error {
 		if utils.LUA_EXTENSION == filepath.Ext(path) {
@@ -27,9 +38,10 @@ func visit(files *[]string) filepath.WalkFunc {
 }
 
 
-// Walk function will be called for every
-// file seen in the filepath "path"
-//
+/*
+	This function starts the scan over the requested scan-paths
+	and adds the 'lua' script paths to the discoverable set.
+ */
 func Scan (paths []string) []string {
 	var files []string
 	for _, path := range paths {

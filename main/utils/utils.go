@@ -1,6 +1,11 @@
+/*
 
-// @author 	swayam.raina
-// @dated 	06.12.2019
+	This file contains all the scanner level constants
+
+	@author 	swayam.raina
+	@dated 		06.12.2019
+
+ */
 
 
 package utils
@@ -14,8 +19,14 @@ import (
 )
 
 
-//
-//
+
+/*
+	This utility function gets the raw contents of a file present
+	at the given location
+
+	scriptPath:		file location
+	return:			raw file content
+ */
 func getContentsInBytes (scriptPath string) []byte {
 	file, err := os.Open(scriptPath)
 	if err != nil {
@@ -28,16 +39,18 @@ func getContentsInBytes (scriptPath string) []byte {
 }
 
 
-//
-//
+/*
+
+ */
 func GetContents (scriptPath string) string {
 	bytes := getContentsInBytes(scriptPath)
 	return string(bytes)
 }
 
 
-//
-//
+/*
+
+ */
 func GetFileName (scriptPath string) string {
 	start := strings.LastIndex(scriptPath, "/")
 	end := strings.LastIndex(scriptPath, ".")
